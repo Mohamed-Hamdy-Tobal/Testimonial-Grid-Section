@@ -68,7 +68,7 @@ main section {
 main .one > img {
     position: absolute;
     top: 0;
-    right: 100px;
+    right: 80px;
 }
 main section .box {
     display: flex;
