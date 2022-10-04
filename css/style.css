@@ -1,0 +1,180 @@
+
+/* Start Global Rules */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+:root {
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --Light-gray: hsl(0, 0%, 81%);
+    --background : hsl(210, 46%, 95%);
+
+    --White: hsl(0, 0%, 100%);
+
+    --fs-300: 0.6875rem;
+    --fs-400: 0.8125rem;
+    --fs-500: 1.25rem;
+}
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+
+    background-color: var(--background);
+
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    
+}
+h1,
+h2,
+h3 {
+    font-weight: 600;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+/* End Global Rules */
+
+/* Start Testimonials */
+.one {
+    background-color: var(--Moderate-violet);
+    color: #fff;
+}
+.two {
+    background-color: var(--Very-dark-grayish-blue);
+    color: #fff;
+}
+.three, .five{
+    background-color: var(--White);
+}
+.four {
+    background-color: var(--Very-dark-blackish-blue);
+    color: #fff;
+}
+
+main section {
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(217deg 19% 35% / 25%);
+    position: relative;
+}
+main .one > img {
+    position: absolute;
+    top: 0;
+    right: 52px;
+    width: 97px;
+}
+main section .box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+main section .box img {
+    width: 1.75rem;
+    border-radius: 50%;
+}
+main section .box .info h3 {
+    font-size: var(--fs-400);
+    line-height: 1;
+    margin: 0 0 3px;
+}
+main section .box .info p {
+    font-size: var(--fs-300);
+    margin: 0;
+    opacity: 0.5;
+}
+main section p:first-of-type {
+    font-size: var(--fs-500);
+    line-height: 1.2;
+    margin: 15px 0 0;
+    z-index: 3;
+    position: relative;
+}
+main section p:last-of-type {
+    opacity: .7;
+    margin: 13px 0 0;
+}
+/* End Testimonials */
+
+/* Start The Grid System */
+main {
+    margin-inline: auto;
+    width: min(95%, 70rem);
+    padding-block: 2rem;
+    display: grid;
+    grid-template-areas: 
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+    grid-auto-columns: 1fr;
+    gap: 1.5rem;
+}
+main section:nth-child(1) {
+    grid-area: one;
+}
+main section:nth-child(2) {
+    grid-area: two;
+}
+main section:nth-child(3) {
+    grid-area: three;
+}
+main section:nth-child(4) {
+    grid-area: four;
+}
+main section:nth-child(5) {
+    grid-area: five;
+}
+
+@media (min-width: 1200px) {
+    main {
+        grid-template-areas: 
+        "one one two five"
+        "three four four five";
+    }
+}
+@media (min-width : 992px) and (max-width: 1199px) {
+    main {
+        grid-template-areas: 
+        "one one one two"
+        "five five five five"
+        "three four four four";
+    }
+}
+@media (min-width : 610px) and (max-width: 991px) {
+    main {
+        grid-template-areas: 
+        "one one one one"
+        "two two five five"
+        "three three five five"
+        "four four four four";
+    }
+}
+@media (min-width : 520px) and (max-width: 609px) {
+    main {
+        grid-template-areas: 
+        "one one one one"
+        "two two three three"
+        "five five five five"
+        "four four four four";
+    }
+}
+@media (max-width : 519px) {
+    main {
+        grid-template-areas: 
+        "one one one one"
+        "two two two two"
+        "three three three three"
+        "four four four four"
+        "five five five five";
+    }
+}
+/* End The Grid System */
